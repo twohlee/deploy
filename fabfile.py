@@ -121,7 +121,7 @@ def _make_virtualhost():
         project_name=PROJECT_NAME,
         servername=REMOTE_HOST,
     )
-    sudo('echo {} > /etc/apache2/sites-available/{}.conf'.format(script, PROJECT_NAME))
+    sudo('echo {} > /etc/apache2/sites-available/{}.conf'.format(script, PROJECT_NAME)) # 여기서 PROJECT_NAME은 deploy 
     sudo('a2ensite {}.conf'.format(PROJECT_NAME))
 
 def _grant_apache2():

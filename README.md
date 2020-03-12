@@ -30,12 +30,37 @@ deploy
 - 브라우저 가동 
 - 52.79.250.132 접속
 - 접속로그 확인(리눅스에서 진행)
-- $ tail -f /var/apache2/access.log 
+- $ tail -f /var/apache2/access.log  # 크롬창에서 새로고침 누르면 cmd 에 업데이트 된 기록 뜸 
+- 모니터링하다가
+- 빠져나가기 -> ctrl + c
+- 에러로그
+- $ tail -f /var/apache2/error.log 
+
 
 # 이후 작업 
 - 코드 수정
 - git 최신 반영
 - 서버 업데이트
-    $ fab deploy 
+    $ fab deploy
+
+
+
+# 잘 안된다!
+- 소스 코드 상에 파일명, 설정값 등 오타가 없어야함 
+- git에 최종 소스가 모두 반영되어야함 
+- 리눅스에서 기존의 흔적을 모두 제거
+    현재 위치 : /home/ubuntu
+    프로젝트 삭제 : $ rm -r -f deploy 
+    숨김 파일 확인 : $ ls -a  
+    가상환경 삭제 : $ rm -r -f .virtualenvs 
+    로컬 PC
+    $ fab new_server 
+
+# 가상 호스트가 설정된 부분
+- deploy는 프로젝트명 (deploy.json)
+- /etc/apache2/site-available/deploy.conf
+- 파일 읽기
+    $ cat /etc/apache2/sites-available/deploy.conf 
     
+
 
