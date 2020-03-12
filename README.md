@@ -24,4 +24,18 @@ deploy
 - 운영체계 및 서버 세팅 및 배포, 업테이트 관리 등등을 자동화하는 모듈 => fabric3  
 - $ pip3 install fabric3 // 이거 안되면 $ pip install fabric3
 - git에 최종 소스 반영 
+- fabfile.py에 env.key_filename 부분 env.key_filename = '../hwanheelee.pem'로 바꿔주기 
+- terminal 창에 $ fab new_server
+- 중간에 y, git로그인 등등이 나올 수 있다
+- 브라우저 가동 
+- 52.79.250.132 접속
+- 접속로그 확인(리눅스에서 진행)
+- $ tail -f /var/apache2/access.log 
+
+# 이후 작업 
+- 코드 수정
+- git 최신 반영
+- 서버 업데이트
+    $ fab deploy 
+    
 
